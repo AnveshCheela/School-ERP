@@ -1,0 +1,25 @@
+services:
+  grading-service:
+    build: ./grading-service
+    ports:
+      - "50051:50051"
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - grading-service
+    environment:
+      - GRPC_HOST=grading-service:50051
+      - DEBUG=1
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    restart: unless-stopped
