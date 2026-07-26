@@ -1,3 +1,4 @@
+<div class="min-h-screen w-full flex items-center justify-center p-4 bg-surface">
 <main class="w-full max-w-md">
 <div class="bg-surface-container-lowest rounded-[12px] shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-[#E2E8F0] p-8 relative overflow-hidden">
 <header class="flex items-center gap-4 mb-6 pb-6 border-b border-[#E2E8F0]">
@@ -21,7 +22,7 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-outline text-xl" data-icon="shield_person">shield_person</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-2.5 bg-surface-container-lowest border border-[#E2E8F0] rounded-lg font-body-md text-body-md text-on-surface placeholder:text-[#94A3B8] focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:outline-none transition-shadow" id="email" placeholder="admin@vagdevi.edu" type="email"/>
+<input class="block w-full pl-10 pr-3 py-2.5 bg-surface-container-lowest border border-[#E2E8F0] rounded-lg font-body-md text-body-md text-on-surface placeholder:text-[#94A3B8] focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:outline-none transition-shadow" id="email" name="email" [(ngModel)]="email" placeholder="admin@vagdevi.edu" type="email"/>
 </div>
 </div>
 <div class="space-y-1.5">
@@ -50,7 +51,7 @@
 </div>
 </div>
 <div class="pt-4">
-<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:-translate-y-[1px] active:translate-y-[0px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)]" type="submit" routerLink="/">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:-translate-y-[1px] active:translate-y-[0px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)]" type="button" (click)="onLogin()">
                         Login to Management Hub
                     </button>
 </div>
@@ -61,3 +62,4 @@
 </div>
 </div>
 </main>
+</div>

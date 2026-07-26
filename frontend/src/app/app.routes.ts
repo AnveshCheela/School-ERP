@@ -1,3 +1,5 @@
+import { SuperadminDashboard } from './pages/dashboards/superadmin-dashboard/superadmin-dashboard';
+import { AccountantDashboard } from './pages/dashboards/accountant-dashboard/accountant-dashboard';
 import { Routes } from '@angular/router';
 import { LandingPage } from './pages/landing-page/landing-page';
 import { StudentLogin } from './pages/auth/student-login/student-login';
