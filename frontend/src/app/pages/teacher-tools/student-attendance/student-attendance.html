@@ -1,0 +1,163 @@
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm w-full top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Vagdevi Vidyalayam Logo" class="h-10 w-10 object-contain rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbPfMA8zx_BJAxuKlQ44dBYTO_zMt9cYy4aXoMYZHcNU1hs6lOhlxfA_jAkcYZ6ZUtJgFgzflIiAsxPmp9dA5i2nrnhB40b_gpk2_PMB0PF4ugSOtxlLbealVUg6mqZWRud5r9f50ALDTN-U7LMaEYkxI9Onv0dLtKN_AqKBlhtya1rMNILRTvaeTYjERloHKNKf_znEafrNSn1joMQKtSBjSa7j--EEDAJkTL0SjVhR13oTOXn1yIyRH3lKHFIMyXL8moyrF4MO8"/>
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary tracking-tight"  routerLink="/dashboard/teacher">EduPulse ERP</a>
+</div>
+<div class="hidden md:flex items-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 font-semibold" href="#">Attendance</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Grades</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Schedule</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Messages</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<img alt="Teacher profile photo" class="h-8 w-8 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a teacher, well-lit, smiling softly against a neutral light background, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPSD8LVK6haKXkDTWtg4VC-A1qPCtX_DbwXCOyQcVRqxGdlqu63tUD5PJBBJ-6jYotMn1fziMT2wJ98lGrmvncUUZlNJ4R4M6qqmiPhDotNAJ-PBJ3Lr454SRsd2Vx0BaqNx5b6OpfE8WeInN0i1fgIvR53JjhtwaFLImUb1g2g3DdqMzF31QpX99jNZnRb4ifGemYiG1GwVPI4YHbmOiMBimg5NsjD02Iu6VjD-OZVsCiV6zdNV9xCltv0-ApSJ1e3J7437J2BfI"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-4xl mx-auto py-8 px-8">
+<!-- Action / Breadcrumb Row -->
+<div class="mb-6">
+<a class="inline-flex items-center text-sm font-label-md text-primary hover:text-on-primary-fixed-variant transition-colors group"  routerLink="/dashboard/teacher">
+<span class="material-symbols-outlined text-[18px] mr-1 group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                Back to Dashboard
+            </a>
+</div>
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Mark Attendance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Class 10-A</p>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+</div>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm shadow-sm" type="date" value="2024-07-26"/>
+</div>
+</header>
+<!-- Attendance Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-outline-variant overflow-hidden mb-8">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-4 px-6 font-label-sm text-label-sm uppercase tracking-wider text-outline w-24">Roll No</th>
+<th class="py-4 px-6 font-label-sm text-label-sm uppercase tracking-wider text-outline">Student Name</th>
+<th class="py-4 px-6 font-label-sm text-label-sm uppercase tracking-wider text-outline text-right">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">01</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian male high school student, clean-cut, wearing a school uniform, neutral light background, modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgrcXLF4gZr5AyEPaarPWlJOKaKiP92DiraYTW7kYuebeGDMSjnGH7fEXnkDzQ8e3pc3BcU6LAw7i9GoiTmB4WHVj_U7wDy-1TjKZn3OIJdyTY-TzPS_0xroFLCOuNFSQn1OTSrd97YhQSz4SBhCebecHNKlllyqbKisdu1cw3PEclZN0Em3tsbhGY76vh88SNcHXRMT8zURKpKIHMYGU-1esCHm9LAS0acxtK8Cr_0xOHljzmGnPxCs69WI4E0HgsfqTI61Lhvk"/>
+<span>Rahul Kumar</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1 shadow-sm">
+<button class="toggle-btn present px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none">Present</button>
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">02</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian female high school student, neat hair, wearing a school uniform, neutral light background, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXe7fgv4USB5OC3NJTjxiRfWqQvESrsINZF5Xy8gD8Vh6RlWHwgTFCQsivw4HR2HPKycR9xKRaJx7nx3ytRZcj-02-oERGkawKu1sx5_YTDwsGzrixMEnFiLIHzvngx8keqW_eKJWXU4hpni6YkwT8_rm2dpOQhOyF2CfxDPIVNmP6L1cq-SFDYn7BjRmaOq3ftMLHFmve_AcyQp_Ae-3lgYRlgKK4xll0ZJr_GWSSvH_fyKfONCoyd5V0ObkHe2LsiENxFDZLZw"/>
+<span>Priya Sharma</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1 shadow-sm">
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
+<button class="toggle-btn absent px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none">Absent</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">03</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian male student, wearing a school uniform, neutral light background, modern educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC--1x9Q2UFL151we3UPj8ze4TMgi8qmtY508BiFQaUPzv5ztIb2rANE6CHpQ1ralebz9QeoOjlT8Ah7UUuiZvAxo9WKWfFmaFkfw6BIa4AF0SGOB1g__9x2FrGNuznEattFNeuOrFbqj38GLYBrd-zFrP7n73g3Ij61YrW4Um5MpCvOBVmW6wwKh8DXw-p9-EVH3gZtx_FHxr2dbPP7yLVZ5rIrp4tUzL9UCn0YzURKRlVPqA-zpdXiZyc2XLsrXPdPPMyXwSf6ec"/>
+<span>Amit Singh</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">04</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian female student, wearing a school uniform, neutral light background, clear high-resolution style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB_Un54Wo_R4O1liIRJeNc7RL7LgnLpxERdeLWXVEHjlUfvm3Bom-uMzC_FdgE2n94s_Pux7y2cskzEIiUwS1apJJcHuEuxN-Olo5oE9UKlDmzOYsA4Z0DPSM8DFX_xhjGbJoDlUl2kce61PezCpKKgL06UbETp2gtyagvQYr5NgzlVJhZWtMyfJeWPlFBpGRFuC-c8QlCzKMQdoEIjW4wAfoWMrHwZtobMIbMDqmRTUbtG3D5EdPrsAIO2vUb19n5ZzOs1qgR0Bo"/>
+<span>Sneha Reddy</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">05</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of a male student, wearing a school uniform, neutral light background, professional school portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS3ku0qkpHNS-pY5hEk4srLefNAIlJ_zab4XosvflNA6AJZ0RdJVJC6OVgS5DGokpHfHRDXAG-eYmOLNmZyDdHR2S25yQdf0uqUpW4vZgE3KDdXbTgswO1ytNprMErCq626MjZa-phBpYoLTOgw5O69UIJ4Xqim3XKVO8QNX48Txx33knY0pVktRLqFl9joctrFWOn1QU3Uq-3J2QhpHBvMRh4V9LRzm8aUfkQJLCt5JQCaufMmq-_he8ESI5HFpf1RzuF0QGC7-0"/>
+<span>Vikram Das</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
+<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Action Footer -->
+<div class="flex justify-end">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md px-8 py-3 rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-200 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                Save Attendance
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant dark:border-outline w-full mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-lg py-xl max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="font-label-md text-label-md font-bold text-on-surface dark:text-inverse-on-surface">EduPulse ERP</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant mt-1">© 2024 EduPulse Academic Systems. All rights reserved.</p>
+</div>
+<div class="flex gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline transition-all" href="#">Support</a>
+</div>
+</div>
+</footer>

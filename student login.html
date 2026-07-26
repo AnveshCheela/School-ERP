@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Portal Login - Vagdevi Vidyalayam</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#464555",
+                      "tertiary": "#005522",
+                      "outline": "#777587",
+                      "surface-container-low": "#f2f3ff",
+                      "primary": "#3525cd",
+                      "on-secondary-fixed": "#001f28",
+                      "tertiary-fixed": "#7ffc97",
+                      "on-background": "#131b2e",
+                      "secondary-fixed-dim": "#6cd3f7",
+                      "surface-container-high": "#e2e7ff",
+                      "on-tertiary-container": "#78f591",
+                      "surface": "#faf8ff",
+                      "background": "#faf8ff",
+                      "surface-dim": "#d2d9f4",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#76dcff",
+                      "inverse-on-surface": "#eef0ff",
+                      "surface-variant": "#dae2fd",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#b7eaff",
+                      "secondary": "#006780",
+                      "on-primary-container": "#dad7ff",
+                      "tertiary-fixed-dim": "#62df7d",
+                      "inverse-primary": "#c3c0ff",
+                      "error": "#ba1a1a",
+                      "primary-container": "#4f46e5",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "on-secondary-container": "#006077",
+                      "on-tertiary-fixed-variant": "#005320",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#faf8ff",
+                      "surface-tint": "#4d44e3",
+                      "on-surface": "#131b2e",
+                      "surface-container": "#eaedff",
+                      "outline-variant": "#c7c4d8",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#0f0069",
+                      "primary-fixed": "#e2dfff",
+                      "on-secondary-fixed-variant": "#004e61",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "on-tertiary-fixed": "#002109",
+                      "tertiary-container": "#00702f",
+                      "inverse-surface": "#283044",
+                      "surface-container-highest": "#dae2fd",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "1.5rem",
+                      "container-max": "1280px",
+                      "md": "1rem",
+                      "gutter": "24px",
+                      "xl": "2rem",
+                      "2xl": "3rem",
+                      "xs": "0.25rem",
+                      "sm": "0.5rem",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] min-h-screen flex items-center justify-center p-4 md:p-gutter font-body-md text-on-surface">
+<div class="bg-surface-container-lowest shadow-[0_4px_16px_rgba(0,0,0,0.06)] rounded-xl overflow-hidden max-w-md w-full p-8 border border-outline-variant">
+<!-- Header Section -->
+<div class="flex items-center gap-4">
+<img alt="Vagdevi Vidyalayam Logo" class="w-12 h-12 rounded-full border border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8mvrKXo3oqgyjNNYAxQKnTS0wiTDv-qY0_Hg6gMdg-HaxdVuudKPUSUHhGzMTHZhN46n5pL8CgZXFLsAym3sfUkMztHhPk7xHAl7Zt5Wq4Xag366YFSStW-kFfPt1aKIYjXov6KioQrBwJLBcA8BNQ6E8bdQRMbiYu23Y0TtGvfJiki77DZD9Kv6FHkWBF9uUIsLeNloVNMgogUvtr00lSHfPoalOy3tQt5R8K-fQj3PQcPdc4XAeBwAEIt52O6mzFN-zuNmSEg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Vagdevi Vidyalayam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">HIGH SCHOOL</span>
+</div>
+</div>
+<div class="border-b border-surface-container-high my-6"></div>
+<!-- Title Section -->
+<div class="flex items-center gap-2 justify-center mb-2">
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[18px]">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Student Hub</h1>
+</div>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant mb-6">Welcome back! Please enter your details.</p>
+<!-- Form Fields -->
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="studentId">Student ID or Roll Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="studentId" placeholder="e.g. STU12345" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button" onclick="window.location.href='student dash board light theme.html'; return false;">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Action Button -->
+<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="submit" onclick="window.location.href='student dash board light theme.html'; return false;">
+                Login to Student Hub
+            </button>
+</form>
+<!-- Footer -->
+<p class="text-center font-body-sm text-[12px] text-on-surface-variant mt-6">Need help? Contact your class teacher.</p>
+</div>
+</body></html>

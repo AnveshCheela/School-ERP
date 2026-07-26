@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submit Marks - Vagdevi Vidyalayam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d2d9f4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-surface": "#131b2e",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-container": "#eaedff",
+                        "secondary": "#006780",
+                        "primary": "#3525cd",
+                        "surface-bright": "#faf8ff",
+                        "outline-variant": "#c7c4d8",
+                        "surface": "#faf8ff",
+                        "inverse-surface": "#283044",
+                        "on-secondary-fixed": "#001f28",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#004e61",
+                        "secondary-container": "#76dcff",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary-container": "#78f591",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf8ff",
+                        "secondary-fixed-dim": "#6cd3f7",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#005522",
+                        "inverse-on-surface": "#eef0ff",
+                        "secondary-fixed": "#b7eaff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#00702f",
+                        "primary-container": "#4f46e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#62df7d",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed": "#7ffc97",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-container": "#dad7ff",
+                        "surface-tint": "#4d44e3",
+                        "on-secondary-container": "#006077",
+                        "surface-variant": "#dae2fd",
+                        "outline": "#777587",
+                        "on-surface-variant": "#464555"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "2rem",
+                        "md": "1rem",
+                        "2xl": "3rem",
+                        "xs": "0.25rem",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "lg": "1.5rem",
+                        "sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-[#F8FAFC] min-h-screen flex flex-col">
+<!-- Top Navigation (Task-focused context, hiding full nav shell per guidelines, showing back link) -->
+<nav class="bg-surface border-b border-outline-variant shadow-sm w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="Vagdevi Vidyalayam Logo" class="h-10 w-10 object-contain rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb4qZR60KBqvV8KfYqBOwMHnprvVetHyTp2upS68dWTKfo-Usk6zEqpDEgPFonj7_G3jlRmSNC7sDJzG5_OEznO1cJKcJCULJzBxSsmd9fTzDnmnpXN6c7AYqsBzsV7Hb-C0IzvaVwsHjy52N7Zzb5y4gS6GDGHhLfbXVg0MrZEkY92dR3Fj1H6FqrKfUNNMqEz9ktRAHLemL8QPpqoAwIroi9qWTuzDJd1Kv3mUMi-qE4BGq7HuAbJsEZXFtwgDfgdWLCLrES-yA"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Vagdevi Vidyalayam</span>
+</div>
+<a class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"  href="teacher dashboard.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+                Back to Dashboard
+            </a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-4xl mx-auto py-xl px-lg md:px-xl flex flex-col">
+<!-- Header -->
+<header class="mb-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Submit Marks</h1>
+</header>
+<!-- Filters (Bento/Card style wrapper) -->
+<section class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm mb-lg flex flex-col sm:flex-row gap-md items-end">
+<div class="flex-1 w-full">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs" for="subject-select">Subject</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="subject-select">
+<option value="math">Mathematics</option>
+<option value="science">Science</option>
+<option value="english">English</option>
+</select>
+</div>
+<div class="flex-1 w-full">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs" for="exam-select">Exam Type</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="exam-select">
+<option value="mid">Mid-Term</option>
+<option value="final">Final Exam</option>
+<option value="unit">Unit Test</option>
+</select>
+</div>
+<div class="w-full sm:w-auto">
+<button class="w-full sm:w-auto bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md px-md py-sm rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Apply
+                 </button>
+</div>
+</section>
+<!-- Marks Entry Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-outline-variant overflow-hidden flex-grow flex flex-col mb-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-sm px-md w-24">Roll No</th>
+<th class="py-sm px-md">Student Name</th>
+<th class="py-sm px-md w-48">Score (/100)</th>
+<th class="py-sm px-md w-40">Current Avg</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">01</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a young male student, well-lit studio lighting, neutral background, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQiyW-slx_fVKYaOBX7qnPoYLjBfUz1AwFUJYYNzijvx90LdKqoH21gaOUHhmd8z2RA8a5gDaRIP7l3OynMTFDmcuVHTHqIhZyGbFlBVfDQOX7ql4NILATprR5vuh8Q4ZaQ_CcRw111GrL_PEL7sARNp-9OnPk3JN9eWmjU9T3IB5XTlTAksTDZsypCttyFbQv5CbFmfBC_NeajRlr_lDu92l1sVRN_ThuBZxipL9b7IMBuIghiz5UsIE6fI5_3ZJSWbTVNcmH9Y"/>
+<span class="font-label-md text-label-md">Rahul Kumar</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="92"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm border border-secondary-container/30">
+                                    88%
+                                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">02</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a young female student, soft natural lighting, light grey background, clean corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBykjcnccw4VhQ7sZLclcygmr0pLzhovFpov5jZnqvM6C3aAinK2rG2uNAMb_4QEi5IVVIxV7TWfWSWzFnxUZXvUUnxkmM-xmqWFox3Ay4Mo2KwznxnxJGCQVOAAuPfdEeFmiiFLiD30XCOZPIG47YOC2RALBlZTjr5fHXbpZEnuCH4uHE41EJMhET14MlTSr9wSCXD2lk_r6B-U_uq0EW-zyzKhDeRtYBdypRiZ1_B6VLTWZskBEvfbrK4H9grSNbBD8FX1iXTRGs"/>
+<span class="font-label-md text-label-md">Priya Sharma</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="85"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm border border-tertiary-container/30">
+                                    91%
+                                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/30">
+<td class="py-md px-md font-label-md text-label-md text-on-surface-variant">03</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary font-label-md text-label-md border border-primary/20">AS</div>
+<span class="font-label-md text-label-md">Amit Singh</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border-2 border-primary/40 shadow-[0_0_0_2px_rgba(79,70,229,0.1)] rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" placeholder="--" type="number"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+                                    78%
+                                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">04</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a female student with glasses, warm studio lighting, neutral background, professional SaaS avatar style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Shm_MpTJQ7wm2zK8XRv9SGlt1NOBE_7O7fWB-8eWx4Ha_q49N3KCH-eG3CcRxrUD80A_zqR6X-_95IfgT04H8uQpID3P9ZriNxn1ebtNyq4E9khdaE7WAIjZKMpUh7POBZiWIvylph-z_fkt_LnrqctFAjH_9GeOx2jor1n2mGyjQEsp2Fs-4fSiKUZ0PY3Rko2XeiKZRUZTE-w8VqkbV9rXDtQrwGSPRyrV8bSwVx6rUVKA8wmsRVCM_PYJ-d2ndzRFn5aFXrM"/>
+<span class="font-label-md text-label-md">Sneha Reddy</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="95"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm border border-tertiary-container/30">
+                                    94%
+                                </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">05</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary font-label-md text-label-md border border-secondary/20">VD</div>
+<span class="font-label-md text-label-md">Vikram Das</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="72"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container/20 text-on-error-container font-label-sm text-label-sm border border-error-container/30">
+                                    75%
+                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Actions -->
+<div class="bg-surface-container-lowest border-t border-outline-variant p-md flex justify-end items-center mt-auto rounded-b-xl">
+<button class="bg-primary-container text-on-primary rounded-lg px-lg py-sm font-label-md text-label-md hover:bg-primary transition-colors duration-200 shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                    Submit Marks
+                </button>
+</div>
+</div>
+</main>
+</body></html>

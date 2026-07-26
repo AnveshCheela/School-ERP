@@ -1,0 +1,56 @@
+<div class="bg-surface-container-lowest shadow-[0_4px_16px_rgba(0,0,0,0.06)] rounded-xl overflow-hidden max-w-md w-full p-8 border border-outline-variant">
+<!-- Header Section -->
+<div class="flex items-center gap-4">
+<img alt="Vagdevi Vidyalayam Logo" class="w-12 h-12 rounded-full border border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8mvrKXo3oqgyjNNYAxQKnTS0wiTDv-qY0_Hg6gMdg-HaxdVuudKPUSUHhGzMTHZhN46n5pL8CgZXFLsAym3sfUkMztHhPk7xHAl7Zt5Wq4Xag366YFSStW-kFfPt1aKIYjXov6KioQrBwJLBcA8BNQ6E8bdQRMbiYu23Y0TtGvfJiki77DZD9Kv6FHkWBF9uUIsLeNloVNMgogUvtr00lSHfPoalOy3tQt5R8K-fQj3PQcPdc4XAeBwAEIt52O6mzFN-zuNmSEg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Vagdevi Vidyalayam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">HIGH SCHOOL</span>
+</div>
+</div>
+<div class="border-b border-surface-container-high my-6"></div>
+<!-- Title Section -->
+<div class="flex items-center gap-2 justify-center mb-2">
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[18px]">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Student Hub</h1>
+</div>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant mb-6">Welcome back! Please enter your details.</p>
+<!-- Form Fields -->
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="studentId">Student ID or Roll Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="studentId" placeholder="e.g. STU12345" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button" routerLink="/dashboard/student">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Action Button -->
+<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="submit" routerLink="/dashboard/student">
+                Login to Student Hub
+            </button>
+</form>
+<!-- Footer -->
+<p class="text-center font-body-sm text-[12px] text-on-surface-variant mt-6">Need help? Contact your class teacher.</p>
+</div>

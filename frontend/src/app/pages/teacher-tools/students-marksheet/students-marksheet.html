@@ -1,0 +1,159 @@
+<!-- Top Navigation (Task-focused context, hiding full nav shell per guidelines, showing back link) -->
+<nav class="bg-surface border-b border-outline-variant shadow-sm w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="Vagdevi Vidyalayam Logo" class="h-10 w-10 object-contain rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb4qZR60KBqvV8KfYqBOwMHnprvVetHyTp2upS68dWTKfo-Usk6zEqpDEgPFonj7_G3jlRmSNC7sDJzG5_OEznO1cJKcJCULJzBxSsmd9fTzDnmnpXN6c7AYqsBzsV7Hb-C0IzvaVwsHjy52N7Zzb5y4gS6GDGHhLfbXVg0MrZEkY92dR3Fj1H6FqrKfUNNMqEz9ktRAHLemL8QPpqoAwIroi9qWTuzDJd1Kv3mUMi-qE4BGq7HuAbJsEZXFtwgDfgdWLCLrES-yA"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Vagdevi Vidyalayam</span>
+</div>
+<a class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"  routerLink="/dashboard/teacher">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+                Back to Dashboard
+            </a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-4xl mx-auto py-xl px-lg md:px-xl flex flex-col">
+<!-- Header -->
+<header class="mb-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Submit Marks</h1>
+</header>
+<!-- Filters (Bento/Card style wrapper) -->
+<section class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm mb-lg flex flex-col sm:flex-row gap-md items-end">
+<div class="flex-1 w-full">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs" for="subject-select">Subject</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="subject-select">
+<option value="math">Mathematics</option>
+<option value="science">Science</option>
+<option value="english">English</option>
+</select>
+</div>
+<div class="flex-1 w-full">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs" for="exam-select">Exam Type</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="exam-select">
+<option value="mid">Mid-Term</option>
+<option value="final">Final Exam</option>
+<option value="unit">Unit Test</option>
+</select>
+</div>
+<div class="w-full sm:w-auto">
+<button class="w-full sm:w-auto bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md px-md py-sm rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Apply
+                 </button>
+</div>
+</section>
+<!-- Marks Entry Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-outline-variant overflow-hidden flex-grow flex flex-col mb-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-sm px-md w-24">Roll No</th>
+<th class="py-sm px-md">Student Name</th>
+<th class="py-sm px-md w-48">Score (/100)</th>
+<th class="py-sm px-md w-40">Current Avg</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">01</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a young male student, well-lit studio lighting, neutral background, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQiyW-slx_fVKYaOBX7qnPoYLjBfUz1AwFUJYYNzijvx90LdKqoH21gaOUHhmd8z2RA8a5gDaRIP7l3OynMTFDmcuVHTHqIhZyGbFlBVfDQOX7ql4NILATprR5vuh8Q4ZaQ_CcRw111GrL_PEL7sARNp-9OnPk3JN9eWmjU9T3IB5XTlTAksTDZsypCttyFbQv5CbFmfBC_NeajRlr_lDu92l1sVRN_ThuBZxipL9b7IMBuIghiz5UsIE6fI5_3ZJSWbTVNcmH9Y"/>
+<span class="font-label-md text-label-md">Rahul Kumar</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="92"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm border border-secondary-container/30">
+                                    88%
+                                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">02</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a young female student, soft natural lighting, light grey background, clean corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBykjcnccw4VhQ7sZLclcygmr0pLzhovFpov5jZnqvM6C3aAinK2rG2uNAMb_4QEi5IVVIxV7TWfWSWzFnxUZXvUUnxkmM-xmqWFox3Ay4Mo2KwznxnxJGCQVOAAuPfdEeFmiiFLiD30XCOZPIG47YOC2RALBlZTjr5fHXbpZEnuCH4uHE41EJMhET14MlTSr9wSCXD2lk_r6B-U_uq0EW-zyzKhDeRtYBdypRiZ1_B6VLTWZskBEvfbrK4H9grSNbBD8FX1iXTRGs"/>
+<span class="font-label-md text-label-md">Priya Sharma</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="85"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm border border-tertiary-container/30">
+                                    91%
+                                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/30">
+<td class="py-md px-md font-label-md text-label-md text-on-surface-variant">03</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary font-label-md text-label-md border border-primary/20">AS</div>
+<span class="font-label-md text-label-md">Amit Singh</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border-2 border-primary/40 shadow-[0_0_0_2px_rgba(79,70,229,0.1)] rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" placeholder="--" type="number"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+                                    78%
+                                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">04</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant bg-surface-container" data-alt="A small, professional headshot of a female student with glasses, warm studio lighting, neutral background, professional SaaS avatar style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Shm_MpTJQ7wm2zK8XRv9SGlt1NOBE_7O7fWB-8eWx4Ha_q49N3KCH-eG3CcRxrUD80A_zqR6X-_95IfgT04H8uQpID3P9ZriNxn1ebtNyq4E9khdaE7WAIjZKMpUh7POBZiWIvylph-z_fkt_LnrqctFAjH_9GeOx2jor1n2mGyjQEsp2Fs-4fSiKUZ0PY3Rko2XeiKZRUZTE-w8VqkbV9rXDtQrwGSPRyrV8bSwVx6rUVKA8wmsRVCM_PYJ-d2ndzRFn5aFXrM"/>
+<span class="font-label-md text-label-md">Sneha Reddy</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="95"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm border border-tertiary-container/30">
+                                    94%
+                                </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-label-md text-label-md">05</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary font-label-md text-label-md border border-secondary/20">VD</div>
+<span class="font-label-md text-label-md">Vikram Das</span>
+</div>
+</td>
+<td class="py-md px-md">
+<input class="w-24 bg-surface-container-lowest border border-outline-variant rounded-lg px-sm py-xs text-center font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" max="100" min="0" type="number" value="72"/>
+</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container/20 text-on-error-container font-label-sm text-label-sm border border-error-container/30">
+                                    75%
+                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Actions -->
+<div class="bg-surface-container-lowest border-t border-outline-variant p-md flex justify-end items-center mt-auto rounded-b-xl">
+<button class="bg-primary-container text-on-primary rounded-lg px-lg py-sm font-label-md text-label-md hover:bg-primary transition-colors duration-200 shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                    Submit Marks
+                </button>
+</div>
+</div>
+</main>

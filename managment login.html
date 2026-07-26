@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Management Hub - Vagdevi Vidyalayam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#b7eaff",
+                      "surface-container": "#eaedff",
+                      "on-tertiary-fixed": "#002109",
+                      "on-surface-variant": "#464555",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#0f0069",
+                      "on-tertiary-container": "#78f591",
+                      "surface-bright": "#faf8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#dae2fd",
+                      "tertiary-container": "#00702f",
+                      "on-tertiary-fixed-variant": "#005320",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f3ff",
+                      "tertiary-fixed-dim": "#62df7d",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "surface-variant": "#dae2fd",
+                      "primary": "#3525cd",
+                      "on-secondary-fixed-variant": "#004e61",
+                      "surface": "#faf8ff",
+                      "surface-tint": "#4d44e3",
+                      "surface-container-high": "#e2e7ff",
+                      "secondary-fixed-dim": "#6cd3f7",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "inverse-on-surface": "#eef0ff",
+                      "on-secondary-container": "#006077",
+                      "on-primary-container": "#dad7ff",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#c7c4d8",
+                      "outline": "#777587",
+                      "background": "#faf8ff",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#4f46e5",
+                      "inverse-surface": "#283044",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#76dcff",
+                      "on-background": "#131b2e",
+                      "tertiary-fixed": "#7ffc97",
+                      "secondary": "#006780",
+                      "on-surface": "#131b2e",
+                      "tertiary": "#005522",
+                      "surface-dim": "#d2d9f4",
+                      "primary-fixed": "#e2dfff",
+                      "on-secondary-fixed": "#001f28",
+                      "inverse-primary": "#c3c0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "0.5rem",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "lg": "1.5rem",
+                      "xs": "0.25rem",
+                      "2xl": "3rem",
+                      "xl": "2rem",
+                      "md": "1rem",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center p-margin-mobile md:p-md selection:bg-primary-container selection:text-white">
+<main class="w-full max-w-md">
+<div class="bg-surface-container-lowest rounded-[12px] shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-[#E2E8F0] p-8 relative overflow-hidden">
+<header class="flex items-center gap-4 mb-6 pb-6 border-b border-[#E2E8F0]">
+<img alt="Vagdevi Vidyalayam Logo" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOcb5Hh4ZouWje1aReyHO-jW768fbGQjeyDESdAlMd9W28CfRIVJs1lgjCPccY2ZnCI8UoWrkLDMzb6xD2IvGu9JjE5BeZMfXXZ2-_KDhQ-Lj6-jLCppdCWBHiz_RJAPkHRjCJBl6imslKmVcBpCyOaC3L90Y9hOQCtMgbKcDTPEajw3GX4fUsd0dASPChloA9IoAdBL5xZLCsrOiQGmPwzDjlJhzg7xwjFA9gwZPNoK7jCdC2_FVj4R6Smt1XB7XMJhDYgTRXoVA"/>
+<div class="flex flex-col">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Vagdevi Vidyalayam</h1>
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">High School</span>
+</div>
+</header>
+<div class="flex flex-col items-center mb-8 text-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="domain">domain</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Management Hub</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Secure access for school administration.</p>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface" for="email">Admin Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="shield_person">shield_person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 bg-surface-container-lowest border border-[#E2E8F0] rounded-lg font-body-md text-body-md text-on-surface placeholder:text-[#94A3B8] focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:outline-none transition-shadow" id="email" placeholder="admin@vagdevi.edu" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 bg-surface-container-lowest border border-[#E2E8F0] rounded-lg font-body-md text-body-md text-on-surface placeholder:text-[#94A3B8] focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:outline-none transition-shadow" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-primary transition-colors" type="button" onclick="window.location.href='landing page.html'; return false;">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary-container focus:ring-primary-container border-[#E2E8F0] rounded bg-surface-container-lowest" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-sm text-body-sm text-on-surface-variant" for="remember-me">
+                            Remember me
+                        </label>
+</div>
+<div class="text-sm">
+<a class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors hover:underline" href="#">
+                            Forgot password?
+                        </a>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:-translate-y-[1px] active:translate-y-[0px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)]" type="submit" onclick="window.location.href='landing page.html'; return false;">
+                        Login to Management Hub
+                    </button>
+</div>
+</form>
+<div class="mt-8 pt-6 border-t border-[#E2E8F0] flex items-center justify-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm">Encrypted &amp; Secure Connection</span>
+</div>
+</div>
+</main>
+</body></html>

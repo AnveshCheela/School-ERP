@@ -1,0 +1,62 @@
+<main class="w-full max-w-md bg-surface-container-lowest shadow-lg rounded-xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="p-lg border-b border-outline-variant/30 flex items-center gap-md">
+<div class="w-12 h-12 rounded-full border border-outline-variant/30 overflow-hidden shrink-0 bg-surface flex items-center justify-center">
+<img alt="School Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6qmiYD4-k38BOE2QrNJiV7y9bTok1WjPMT1SDordqsDPdw7cg8oQnUj49qQq6RVt3RA-e1L9ui8Ub5VK-9YWzZqth4cszLXRQW_I9GBeSvIn7flc2iYXtQdkQrZOtFNOfmum9d86yNZwElvRMrzQvRgviUr06OpS2-lYUP_kin3h-y1_OQfRBl5QSXstoGjRVr31Tuwk39eAfgXSEBD5CKsZbNGt_Qm6HPuMKj3tAc7xZLA3-B9gAoLGv0kUYc-sz9JorYDxFKp8"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">Vagdevi Vidyalayam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">High School</span>
+</div>
+</div>
+<div class="p-lg flex flex-col gap-lg">
+<div class="flex flex-col items-center text-center gap-sm">
+<div class="w-12 h-12 bg-tertiary-container/10 text-tertiary flex items-center justify-center rounded-full mb-2">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book" data-weight="fill">menu_book</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Teacher Hub</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sign in to manage your classes and students.</p>
+</div>
+<form class="flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="employee-id">Employee ID or Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="person">person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="employee-id" name="employee-id" placeholder="e.g. EMP12345" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="password" name="password" placeholder="••••••••" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] hover:text-on-surface transition-colors" data-icon="visibility">visibility</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-sm">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary-container focus:ring-primary-container border-outline-variant rounded bg-surface-container-lowest" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-sm text-body-sm text-on-surface-variant" for="remember-me">
+                            Remember me
+                        </label>
+</div>
+<div class="font-body-sm text-body-sm">
+<a class="font-semibold text-primary hover:text-primary-fixed-dim transition-colors"  routerLink="/dashboard/teacher">
+                            Forgot password?
+                        </a>
+</div>
+</div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:shadow-md mt-md" type="button" routerLink="/dashboard/teacher">
+                    Login to Teacher Hub
+                </button>
+</form>
+</div>
+<div class="p-md bg-surface-container-low text-center border-t border-outline-variant/20 mt-auto">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Need access? <a class="text-primary hover:underline" href="#">Contact IT support.</a></p>
+</div>
+</main>

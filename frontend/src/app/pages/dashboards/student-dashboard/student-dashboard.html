@@ -1,0 +1,183 @@
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-on-background border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 flex flex-col py-md z-20 hidden md:flex">
+<div class="px-md mb-xl flex items-center gap-sm">
+<img alt="School Logo" class="h-12 w-12 rounded-xl object-contain bg-white p-1 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdda_CB6vkZUUlLiZV0Hel3mQpyu0E8tkyWwQ-Yd80RRc03KgvAnmclJ7h4eTqcYkkeoo_-xURqfGHJm21I2TFCtTqIw9QNzdZMm_rAQP-yEyaBek9cLWKgaw1R5Qcr5RdhUoFTj3grYrvqyTA8AfDKjV9Afa6ndxLl5fksOxYV0R3YNKYRmoPlMargxt3MtWXIT_a2plSzggzQNWgp9HQV61sUdDorg1TDXcGllc90X9vjtfvFac3tV_Ywozx_h2NBgGObohZHSE">
+<div>
+<h1 class="font-headline-sm text-headline-sm font-black text-primary">Vagdevi Vidyalayam</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Academic Year 2023-24</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-xs">
+<a class="relative bg-primary/10 text-primary rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out group"  routerLink="/"><div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r-full"></div><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">school</span>
+                Academics
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">event_available</span>
+                Attendance
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">assignment</span>
+                Exams
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">payments</span>
+                Fees
+            </a>
+</div>
+<div class="mt-auto px-xs border-t border-outline-variant dark:border-outline pt-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg mx-sm my-xs px-md py-sm flex items-center gap-sm font-label-md text-label-md transition-all duration-200 ease-in-out"  routerLink="/">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Mobile only for full nav, but providing utility actions on web) -->
+<header class="bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline shadow-sm w-full sticky top-0 z-10">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-md md:hidden">
+<img alt="Vagdevi Vidyalayam" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz5WByZaSHeYM1lLM1XK1kw625A_VfRDEtQJdgHn_bIa9xBKx58Fc1UK-QWYs5VS6B6rZiB6TzpJhVGNifJEs9dY5eKMqU_dqhIull_w_oaSZGqLB9CVbLnSvF3pKYUA7dndYzDCp-HwkpDX5h5eHBIJGkVA6UUntODpwBrOBbDoucHkSgOdnHekk9IVKbJ5fzZwK6J2pswBF2W3tmio8vdxnSqlVsOCiw1SdqQ1PAUe_105vkpCVC2jnk4HtTEhN9FnZ4ytiLymg">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Vagdevi Vidyalayam</span>
+</div>
+<!-- On desktop, title is in side nav, so we can just show actions here -->
+<div class="hidden md:flex flex-1"></div>
+<div class="flex items-center gap-sm">
+<button aria-label="Switch to Dark Mode" title="Switch to Dark Mode" class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 rounded-full active:scale-95 transition-transform">
+  <span class="material-symbols-outlined">dark_mode</span>
+</button><button aria-label="notifications" class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="calendar_month" class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">calendar_month</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden ml-2 border border-outline-variant cursor-pointer">
+<img alt="Student profile avatar" class="w-full h-full object-cover" data-alt="A detailed headshot portrait of a professional student profile avatar. The student is smiling warmly against a soft, light-colored studio background. The lighting is bright and modern, creating a clean, high-key professional look suitable for an enterprise dashboard. Shot with a slight depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ3kpVdUB5kqG9NGAB3EKy9DHDBmC6YqB3ppze8cms5-O_EzJJitjPkzkLj4KlWvCtpHd9QdV7m3_vAmo0dDpqrDZdoPA2eXpKkNN6HuOil4wk3mHX1AE9FSkRlkmbbTOnvAZOipByDV4KCGOeBzY-XdY0b-Wgyjb3TW2lZ72M24rngj0iFpZw3O_jC_cCtbeR8ZGLfsO2asSUDXKgb3le9-30jJYslsL9GxOZiDxCg5F8gY_WDVjkUD1UwnwPy3AlGO7PONOzNu8">
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto py-8 px-8">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-gray-900">My Dashboard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Welcome back, Rahul.</p>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+<!-- Card 1 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-outline-variant p-6 transition-all duration-200 hover:shadow-md group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Attendance</h3>
+<div class="p-2 bg-tertiary-container/10 rounded-lg text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-tertiary">92%</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center"><span class="material-symbols-outlined text-[16px]">trending_up</span> +2%</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-2xl shadow-sm border border-outline-variant p-6 transition-all duration-200 hover:shadow-md group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Overall Average</h3>
+<div class="p-2 bg-primary-container/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">bar_chart</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-[#2563EB]">88%</span>
+</div>
+</div>
+<!-- Card 3 -->
+</div>
+<!-- Main Two-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:grid-cols-2">
+<!-- Left Column (Recent Marks) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface rounded-2xl shadow-sm p-8 border border-outline-variant">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Exam Results</h3>
+<button class="text-primary hover:text-primary-fixed-variant font-label-md text-label-md flex items-center gap-1 transition-colors">
+                                View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- Subject 1 -->
+<div class="group">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">calculate</span>Mathematics</div></span>
+<span class="font-label-md text-label-md text-on-surface">90/100</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[90%]"></div>
+</div>
+</div>
+<!-- Subject 2 -->
+<div class="group">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">science</span>Science</div></span>
+<span class="font-label-md text-label-md text-on-surface">85/100</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[85%]"></div>
+</div>
+</div>
+<!-- Subject 3 -->
+<div class="group">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu_book</span>English</div></span>
+<span class="font-label-md text-label-md text-on-surface">88/100</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Attendance) -->
+<div class="lg:col-span-1">
+<div class="bg-surface rounded-2xl shadow-sm p-8 border border-outline-variant h-full flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">This Month's Attendance</h3>
+<!-- Pseudo Ring Chart using CSS -->
+<div class="flex-1 flex items-center justify-center mb-6">
+<div class="relative w-40 h-40 rounded-full flex items-center justify-center bg-surface-container-highest" style="background: conic-gradient(#005522 0% 90%, #f2f3ff 90% 100%);">
+<div class="absolute inset-4 bg-surface rounded-full flex items-center justify-center flex-col shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)]">
+<span class="font-headline-md text-headline-md text-on-surface">90%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Present</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 mt-auto">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant/50">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-body-md text-body-md text-on-surface">Present</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">18 days <span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span></span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant/50">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-body-md text-body-md text-on-surface">Absent</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">2 days <span class="material-symbols-outlined text-error text-[18px]">cancel</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-outline-variant bg-surface py-6 px-8 flex justify-center items-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Vagdevi Vidyalayam. All rights reserved.</p>
+</footer>
+</div>
