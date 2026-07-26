@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package grading;
+
+service GradingService {
+    // Unary: Submit marks and get back the student's average
+    rpc SubmitMarks (MarksRequest) returns (MarksResponse);
+    
+    // Server streaming: Stream class rankings one student at a time
+    rpc StreamClassRankings (ClassRequest) returns (stream RankingResponse);
+}
+
+message MarksRequest {
+    string student_id = 1;
+    string student_name = 2;
+    string class_id = 3;
+    string subject = 4;
+    float score = 5;
+}
+
+message MarksResponse {
+    string student_id = 1;
+    string subject = 2;
+    float score = 3;
+    float average = 4;
+    string message = 5;
+}
+
+message ClassRequest {
+    string class_id = 1;
+}
+
+message RankingResponse {
+    int32 rank = 1;
+    string student_id = 2;
+    string student_name = 3;
+    float average = 4;
+    int32 total_subjects = 5;
+}
