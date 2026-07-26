@@ -18,7 +18,7 @@
 </div>
 <p class="text-center font-body-sm text-body-sm text-on-surface-variant mb-6">Welcome back! Please enter your details.</p>
 <!-- Form Fields -->
-<form class="flex flex-col gap-4">
+<form class="flex flex-col gap-4" (submit)="$event.preventDefault()">
 <div class="flex flex-col gap-1.5">
 <label class="font-label-md text-label-md text-on-surface-variant" for="studentId">Student ID or Roll Number</label>
 <div class="relative">
@@ -48,7 +48,7 @@
 <a class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors" href="#">Forgot password?</a>
 </div>
 <!-- Action Button -->
-<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="submit" routerLink="/dashboard/student">
+<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="button" routerLink="/dashboard/student">
                 Login to Student Hub
             </button>
 </form>

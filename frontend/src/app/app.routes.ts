@@ -1,5 +1,3 @@
-import { SuperadminDashboard } from './pages/dashboards/superadmin-dashboard/superadmin-dashboard';
-import { AccountantDashboard } from './pages/dashboards/accountant-dashboard/accountant-dashboard';
 import { Routes } from '@angular/router';
 import { LandingPage } from './pages/landing-page/landing-page';
 import { StudentLogin } from './pages/auth/student-login/student-login';
@@ -9,6 +7,8 @@ import { StudentDashboard } from './pages/dashboards/student-dashboard/student-d
 import { TeacherDashboard } from './pages/dashboards/teacher-dashboard/teacher-dashboard';
 import { StudentAttendance } from './pages/teacher-tools/student-attendance/student-attendance';
 import { StudentsMarksheet } from './pages/teacher-tools/students-marksheet/students-marksheet';
+import { SuperadminDashboard } from './pages/dashboards/superadmin-dashboard/superadmin-dashboard';
+import { AccountantDashboard } from './pages/dashboards/accountant-dashboard/accountant-dashboard';
 
 export const routes: Routes = [
   { path: '', component: LandingPage },
@@ -17,6 +17,8 @@ export const routes: Routes = [
   { path: 'login/management', component: ManagementLogin },
   { path: 'dashboard/student', component: StudentDashboard },
   { path: 'dashboard/teacher', component: TeacherDashboard },
+  { path: 'dashboard/superadmin', component: SuperadminDashboard },
+  { path: 'dashboard/accountant', component: AccountantDashboard },
   { path: 'tools/attendance', component: StudentAttendance },
   { path: 'tools/marksheet', component: StudentsMarksheet },
   { path: '**', redirectTo: '' }
