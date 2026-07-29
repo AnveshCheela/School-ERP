@@ -42,7 +42,7 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-outline">calendar_today</span>
 </div>
-<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm shadow-sm" type="date" value="2024-07-26"/>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm shadow-sm" type="date" [(ngModel)]="selectedDate"/>
 </div>
 </header>
 <!-- Attendance Table Card -->
@@ -55,88 +55,34 @@
 <th class="py-4 px-6 font-label-sm text-label-sm uppercase tracking-wider text-outline text-right">Status</th>
 </tr>
 </thead>
-<tbody class="font-body-md text-on-surface divide-y divide-outline-variant">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container transition-colors group">
-<td class="py-4 px-6 font-semibold text-on-surface-variant">01</td>
+<tbody class="font-body-md text-on-surface divide-y divide-outline-variant">\n
+<!-- Dynamic Rows -->
+<tr *ngFor="let student of students; let i = index" class="hover:bg-surface-container transition-colors group">
+<td class="py-4 px-6 font-semibold text-on-surface-variant">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</td>
 <td class="py-4 px-6">
 <div class="flex items-center gap-3">
-<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian male high school student, clean-cut, wearing a school uniform, neutral light background, modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgrcXLF4gZr5AyEPaarPWlJOKaKiP92DiraYTW7kYuebeGDMSjnGH7fEXnkDzQ8e3pc3BcU6LAw7i9GoiTmB4WHVj_U7wDy-1TjKZn3OIJdyTY-TzPS_0xroFLCOuNFSQn1OTSrd97YhQSz4SBhCebecHNKlllyqbKisdu1cw3PEclZN0Em3tsbhGY76vh88SNcHXRMT8zURKpKIHMYGU-1esCHm9LAS0acxtK8Cr_0xOHljzmGnPxCs69WI4E0HgsfqTI61Lhvk"/>
-<span>Rahul Kumar</span>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">
+{{ student.user.first_name.charAt(0) }}{{ student.user.last_name.charAt(0) }}
+</div>
+<span>{{ student.user.first_name }} {{ student.user.last_name }}</span>
 </div>
 </td>
 <td class="py-4 px-6 text-right">
 <div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1 shadow-sm">
-<button class="toggle-btn present px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none">Present</button>
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
+<button (click)="markAttendance(student.id, true)"
+        [ngClass]="markedStatuses[student.id] === true ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:bg-surface-container-high'"
+        class="px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none transition-colors">
+    Present
+</button>
+<button (click)="markAttendance(student.id, false)"
+        [ngClass]="markedStatuses[student.id] === false ? 'bg-error text-on-error' : 'text-on-surface-variant hover:bg-surface-container-high'"
+        class="px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none transition-colors">
+    Absent
+</button>
 </div>
 </td>
 </tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container transition-colors group">
-<td class="py-4 px-6 font-semibold text-on-surface-variant">02</td>
-<td class="py-4 px-6">
-<div class="flex items-center gap-3">
-<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian female high school student, neat hair, wearing a school uniform, neutral light background, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXe7fgv4USB5OC3NJTjxiRfWqQvESrsINZF5Xy8gD8Vh6RlWHwgTFCQsivw4HR2HPKycR9xKRaJx7nx3ytRZcj-02-oERGkawKu1sx5_YTDwsGzrixMEnFiLIHzvngx8keqW_eKJWXU4hpni6YkwT8_rm2dpOQhOyF2CfxDPIVNmP6L1cq-SFDYn7BjRmaOq3ftMLHFmve_AcyQp_Ae-3lgYRlgKK4xll0ZJr_GWSSvH_fyKfONCoyd5V0ObkHe2LsiENxFDZLZw"/>
-<span>Priya Sharma</span>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1 shadow-sm">
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
-<button class="toggle-btn absent px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none">Absent</button>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container transition-colors group">
-<td class="py-4 px-6 font-semibold text-on-surface-variant">03</td>
-<td class="py-4 px-6">
-<div class="flex items-center gap-3">
-<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian male student, wearing a school uniform, neutral light background, modern educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC--1x9Q2UFL151we3UPj8ze4TMgi8qmtY508BiFQaUPzv5ztIb2rANE6CHpQ1ralebz9QeoOjlT8Ah7UUuiZvAxo9WKWfFmaFkfw6BIa4AF0SGOB1g__9x2FrGNuznEattFNeuOrFbqj38GLYBrd-zFrP7n73g3Ij61YrW4Um5MpCvOBVmW6wwKh8DXw-p9-EVH3gZtx_FHxr2dbPP7yLVZ5rIrp4tUzL9UCn0YzURKRlVPqA-zpdXiZyc2XLsrXPdPPMyXwSf6ec"/>
-<span>Amit Singh</span>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container transition-colors group">
-<td class="py-4 px-6 font-semibold text-on-surface-variant">04</td>
-<td class="py-4 px-6">
-<div class="flex items-center gap-3">
-<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of an Indian female student, wearing a school uniform, neutral light background, clear high-resolution style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB_Un54Wo_R4O1liIRJeNc7RL7LgnLpxERdeLWXVEHjlUfvm3Bom-uMzC_FdgE2n94s_Pux7y2cskzEIiUwS1apJJcHuEuxN-Olo5oE9UKlDmzOYsA4Z0DPSM8DFX_xhjGbJoDlUl2kce61PezCpKKgL06UbETp2gtyagvQYr5NgzlVJhZWtMyfJeWPlFBpGRFuC-c8QlCzKMQdoEIjW4wAfoWMrHwZtobMIbMDqmRTUbtG3D5EdPrsAIO2vUb19n5ZzOs1qgR0Bo"/>
-<span>Sneha Reddy</span>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
-</div>
-</td>
-</tr>
-<!-- Row 5 -->
-<tr class="hover:bg-surface-container transition-colors group">
-<td class="py-4 px-6 font-semibold text-on-surface-variant">05</td>
-<td class="py-4 px-6">
-<div class="flex items-center gap-3">
-<img class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A portrait of a male student, wearing a school uniform, neutral light background, professional school portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS3ku0qkpHNS-pY5hEk4srLefNAIlJ_zab4XosvflNA6AJZ0RdJVJC6OVgS5DGokpHfHRDXAG-eYmOLNmZyDdHR2S25yQdf0uqUpW4vZgE3KDdXbTgswO1ytNprMErCq626MjZa-phBpYoLTOgw5O69UIJ4Xqim3XKVO8QNX48Txx33knY0pVktRLqFl9joctrFWOn1QU3Uq-3J2QhpHBvMRh4V9LRzm8aUfkQJLCt5JQCaufMmq-_he8ESI5HFpf1RzuF0QGC7-0"/>
-<span>Vikram Das</span>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-lowest p-1 shadow-sm">
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Present</button>
-<button class="toggle-btn px-4 py-1.5 rounded-md text-sm font-medium text-on-surface-variant hover:bg-surface-container-high focus:outline-none">Absent</button>
-</div>
-</td>
-</tr>
-</tbody>
+\n</tbody>
 </table>
 </div>
 <!-- Action Footer -->
