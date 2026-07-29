@@ -16,7 +16,7 @@ export class StudentAttendance implements OnInit {
   
   students: Student[] = [];
   selectedDate: string = new Date().toISOString().split('T')[0];
-  markedStatuses: { [key: number]: boolean } = {}; // true for present, false for absent
+  markedStatuses: { [key: string]: boolean } = {}; // true for present, false for absent
 
   ngOnInit() {
     this.teacherService.getStudents().subscribe({
@@ -45,15 +45,15 @@ export class StudentAttendance implements OnInit {
     });
   }
 
-  markAttendance(studentId: number, present: boolean) {
+  markAttendance(studentId: number, studentCode: string, present: boolean) {
     this.teacherService.markAttendance(studentId, this.selectedDate, present).subscribe({
       next: () => {
-        this.markedStatuses[studentId] = present;
+        this.markedStatuses[studentCode] = present;
       },
       error: (err) => {
         console.error('Error marking attendance', err);
         // Optimistic UI update for demo if backend fails
-        this.markedStatuses[studentId] = present; 
+        this.markedStatuses[studentCode] = present; 
       }
     });
   }

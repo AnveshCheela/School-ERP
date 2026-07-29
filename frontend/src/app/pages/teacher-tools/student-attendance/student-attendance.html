@@ -70,13 +70,13 @@
 </td>
 <td class="py-4 px-6 text-right">
 <div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1 shadow-sm">
-<button (click)="markAttendance(student.id, true)"
-        [ngClass]="markedStatuses[student.id] === true ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:bg-surface-container-high'"
+<button (click)="markAttendance(student.id, student.student_id, true)"
+        [ngClass]="markedStatuses[student.student_id] === true ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:bg-surface-container-high'"
         class="px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none transition-colors">
     Present
 </button>
-<button (click)="markAttendance(student.id, false)"
-        [ngClass]="markedStatuses[student.id] === false ? 'bg-error text-on-error' : 'text-on-surface-variant hover:bg-surface-container-high'"
+<button (click)="markAttendance(student.id, student.student_id, false)"
+        [ngClass]="markedStatuses[student.student_id] === false ? 'bg-error text-on-error' : 'text-on-surface-variant hover:bg-surface-container-high'"
         class="px-4 py-1.5 rounded-md text-sm font-medium focus:outline-none transition-colors">
     Absent
 </button>
