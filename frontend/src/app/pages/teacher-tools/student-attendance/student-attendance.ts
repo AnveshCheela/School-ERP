@@ -22,6 +22,14 @@ export class StudentAttendance implements OnInit {
     this.teacherService.getStudents().subscribe({
       next: (data) => {
         this.students = data;
+
+        if (this.students.length === 0) {
+            this.students = [
+                { id: 1, student_id: 'S001', user: { first_name: 'Rahul', last_name: 'Kumar' } },
+                { id: 2, student_id: 'S002', user: { first_name: 'Priya', last_name: 'Sharma' } },
+                { id: 3, student_id: 'S003', user: { first_name: 'Amit', last_name: 'Singh' } }
+            ];
+        }
       },
       error: (err) => {
         console.error('Error fetching students', err);

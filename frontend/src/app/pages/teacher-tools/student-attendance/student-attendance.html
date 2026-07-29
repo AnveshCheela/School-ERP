@@ -55,7 +55,8 @@
 <th class="py-4 px-6 font-label-sm text-label-sm uppercase tracking-wider text-outline text-right">Status</th>
 </tr>
 </thead>
-<tbody class="font-body-md text-on-surface divide-y divide-outline-variant">\n
+<tbody class="font-body-md text-on-surface divide-y divide-outline-variant">
+
 <!-- Dynamic Rows -->
 <tr *ngFor="let student of students; let i = index" class="hover:bg-surface-container transition-colors group">
 <td class="py-4 px-6 font-semibold text-on-surface-variant">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</td>
@@ -82,7 +83,8 @@
 </div>
 </td>
 </tr>
-\n</tbody>
+
+</tbody>
 </table>
 </div>
 <!-- Action Footer -->
