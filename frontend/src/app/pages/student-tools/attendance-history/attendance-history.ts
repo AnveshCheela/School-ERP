@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { StudentService } from '../../../core/services/student.service';
 
 interface AttendanceRecord {
   date: string;
@@ -15,13 +16,12 @@ interface AttendanceRecord {
   templateUrl: './attendance-history.html',
 })
 export class AttendanceHistoryComponent implements OnInit {
+  private studentService = inject(StudentService);
+  
   // Mock data for immediate testing since JWT auth isn't hooked up yet
-  records: AttendanceRecord[] = [
-    { date: '2026-08-01', status: 'Present' },
-    { date: '2026-08-02', status: 'Present' },
-    { date: '2026-08-03', status: 'Absent', remarks: 'Sick Leave' },
-    { date: '2026-08-04', status: 'Present' },
-    { date: '2026-08-05', status: 'Present' },
+  records: AttendanceRecord[] = [];
+  
+  mockRecords: AttendanceRecord[] = [
     { date: '2026-08-08', status: 'Present' },
     { date: '2026-08-09', status: 'Present' },
     { date: '2026-08-10', status: 'Absent', remarks: 'Family Event' },
@@ -45,6 +45,24 @@ export class AttendanceHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.studentService.getAttendance().subscribe({
+      next: (data) => {
+        if (data && data.history) {
+           this.records = data.history;
+        } else {
+           this.records = this.mockRecords;
+        }
+        this.calculateStats();
+      },
+      error: (err) => {
+        console.error('Error fetching attendance history', err);
+        this.records = this.mockRecords;
+        this.calculateStats();
+      }
+    });
+  }
+
+  calculateStats() {
     this.totalDays = this.records.length;
     this.presentDays = this.records.filter(r => r.status === 'Present').length;
     this.absentDays = this.records.filter(r => r.status === 'Absent').length;

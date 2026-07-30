@@ -11,19 +11,20 @@ import { SuperadminDashboard } from './pages/dashboards/superadmin-dashboard/sup
 import { AccountantDashboard } from './pages/dashboards/accountant-dashboard/accountant-dashboard';
 import { AttendanceHistoryComponent } from './pages/student-tools/attendance-history/attendance-history';
 import { StudentMarksComponent } from './pages/student-tools/student-marks/student-marks';
+import { teacherGuard, studentGuard } from './core/guards/role.guard';
 
 export const routes: Routes = [
   { path: '', component: LandingPage },
   { path: 'login/student', component: StudentLogin },
   { path: 'login/teacher', component: TeacherLogin },
   { path: 'login/management', component: ManagementLogin },
-  { path: 'dashboard/student', component: StudentDashboard },
-  { path: 'dashboard/teacher', component: TeacherDashboard },
+  { path: 'dashboard/student', component: StudentDashboard, canActivate: [studentGuard] },
+  { path: 'dashboard/teacher', component: TeacherDashboard, canActivate: [teacherGuard] },
   { path: 'dashboard/superadmin', component: SuperadminDashboard },
   { path: 'dashboard/accountant', component: AccountantDashboard },
-  { path: 'student-tools/attendance', component: AttendanceHistoryComponent },
-  { path: 'student-tools/marks', component: StudentMarksComponent },
-  { path: 'tools/attendance', component: StudentAttendance },
-  { path: 'tools/marksheet', component: StudentsMarksheet },
+  { path: 'student-tools/attendance', component: AttendanceHistoryComponent, canActivate: [studentGuard] },
+  { path: 'student-tools/marks', component: StudentMarksComponent, canActivate: [studentGuard] },
+  { path: 'tools/attendance', component: StudentAttendance, canActivate: [teacherGuard] },
+  { path: 'tools/marksheet', component: StudentsMarksheet, canActivate: [teacherGuard] },
   { path: '**', redirectTo: '' }
 ];

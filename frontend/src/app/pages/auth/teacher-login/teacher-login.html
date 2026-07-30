@@ -17,14 +17,19 @@
 <h1 class="font-headline-md text-headline-md text-on-surface">Teacher Hub</h1>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Sign in to manage your classes and students.</p>
 </div>
-<form class="flex flex-col gap-md" (submit)="$event.preventDefault()">
+<form class="flex flex-col gap-md" (ngSubmit)="onSubmit()">
+@if (errorMessage) {
+  <div class="p-3 bg-error-container text-on-error-container rounded-lg text-sm font-medium">
+    {{ errorMessage }}
+  </div>
+}
 <div class="flex flex-col gap-xs">
 <label class="font-label-md text-label-md text-on-surface" for="employee-id">Employee ID or Email</label>
 <div class="relative">
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="person">person</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="employee-id" name="employee-id" placeholder="e.g. EMP12345" type="text"/>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="employee-id" name="username" [(ngModel)]="username" placeholder="e.g. EMP12345" type="text"/>
 </div>
 </div>
 <div class="flex flex-col gap-xs">
@@ -33,7 +38,7 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-10 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="password" name="password" placeholder="••••••••" type="password"/>
+<input class="block w-full pl-10 pr-10 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-sm text-body-sm transition-shadow" id="password" name="password" [(ngModel)]="password" placeholder="••••••••" type="password"/>
 <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
 <span class="material-symbols-outlined text-on-surface-variant text-[20px] hover:text-on-surface transition-colors" data-icon="visibility">visibility</span>
 </div>
@@ -52,7 +57,7 @@
                         </a>
 </div>
 </div>
-<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:shadow-md mt-md" type="button" routerLink="/dashboard/teacher">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all hover:shadow-md mt-md" type="submit">
                     Login to Teacher Hub
                 </button>
 </form>
