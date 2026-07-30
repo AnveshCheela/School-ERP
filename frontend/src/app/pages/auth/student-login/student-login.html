@@ -18,14 +18,19 @@
 </div>
 <p class="text-center font-body-sm text-body-sm text-on-surface-variant mb-6">Welcome back! Please enter your details.</p>
 <!-- Form Fields -->
-<form class="flex flex-col gap-4" (submit)="$event.preventDefault()">
+<form class="flex flex-col gap-4" (ngSubmit)="onSubmit()">
+@if (errorMessage) {
+  <div class="p-3 bg-error-container text-on-error-container rounded-lg text-sm font-medium">
+    {{ errorMessage }}
+  </div>
+}
 <div class="flex flex-col gap-1.5">
 <label class="font-label-md text-label-md text-on-surface-variant" for="studentId">Student ID or Roll Number</label>
 <div class="relative">
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-outline">person</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="studentId" placeholder="e.g. STU12345" type="text"/>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="studentId" name="username" [(ngModel)]="username" placeholder="e.g. STU12345" type="text"/>
 </div>
 </div>
 <div class="flex flex-col gap-1.5">
@@ -34,7 +39,7 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-outline">lock</span>
 </div>
-<input class="block w-full pl-10 pr-10 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="password" placeholder="••••••••" type="password"/>
+<input class="block w-full pl-10 pr-10 py-2.5 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-sm text-body-sm placeholder:text-outline" id="password" name="password" [(ngModel)]="password" placeholder="••••••••" type="password"/>
 <button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button" routerLink="/dashboard/student">
 <span class="material-symbols-outlined">visibility</span>
 </button>
@@ -48,7 +53,7 @@
 <a class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors" href="#">Forgot password?</a>
 </div>
 <!-- Action Button -->
-<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="button" routerLink="/dashboard/student">
+<button class="mt-4 w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all duration-200" type="submit">
                 Login to Student Hub
             </button>
 </form>

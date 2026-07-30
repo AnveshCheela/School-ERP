@@ -59,7 +59,8 @@
 </thead>
 <tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-outline-variant">
     <!-- Dynamic Rows -->
-    <tr *ngFor="let student of students; let i = index" class="hover:bg-surface-container-low transition-colors">
+    @for (student of students; track student.id; let i = $index) {
+    <tr class="hover:bg-surface-container-low transition-colors">
         <td class="py-md px-md font-label-md text-label-md">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</td>
         <td class="py-md px-md">
             <div class="flex items-center gap-sm">
@@ -80,6 +81,7 @@
             </span>
         </td>
     </tr>
+    }
 </tbody>
 </table>
 </div>

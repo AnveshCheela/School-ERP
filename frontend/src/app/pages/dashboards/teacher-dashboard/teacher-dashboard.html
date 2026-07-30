@@ -43,7 +43,7 @@ Attendance
 <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
 <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Total Students</span>
 <div class="flex items-end gap-sm">
-<span class="text-4xl font-bold text-stat-indigo leading-none">42</span>
+<span class="text-4xl font-bold text-stat-indigo leading-none">{{ students.length || 0 }}</span>
 <span class="material-symbols-outlined text-stat-indigo/50 mb-1" data-icon="group">group</span>
 </div>
 </div>
@@ -75,86 +75,30 @@ Attendance
 </tr>
 </thead>
 <tbody class="divide-y divide-border-soft">
+@for (student of students; track student.id; let i = $index) {
 <tr class="hover:bg-slate-50 transition-colors duration-150 group">
-<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">STU-1001</td>
+<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">{{ student.student_id }}</td>
 <td class="px-lg py-md whitespace-nowrap">
 <div class="flex items-center gap-sm">
-<div class="h-8 w-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary font-bold text-xs">RK</div>
-<span class="font-label-md text-label-md text-on-surface">Rahul Kumar</span>
+<div class="h-8 w-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary font-bold text-xs">{{ student.user.first_name[0] }}{{ student.user.last_name[0] }}</div>
+<span class="font-label-md text-label-md text-on-surface">{{ student.user.first_name }} {{ student.user.last_name }}</span>
 </div>
 </td>
-<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">1</td>
+<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">{{ i + 1 }}</td>
 <td class="px-lg py-md text-right whitespace-nowrap">
 <a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-xs" href="#">
                                     View Profile <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </td>
 </tr>
-<tr class="hover:bg-slate-50 transition-colors duration-150 group">
-<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">STU-1002</td>
-<td class="px-lg py-md whitespace-nowrap">
-<div class="flex items-center gap-sm">
-<div class="h-8 w-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-xs">PS</div>
-<span class="font-label-md text-label-md text-on-surface">Priya Singh</span>
-</div>
-</td>
-<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">2</td>
-<td class="px-lg py-md text-right whitespace-nowrap">
-<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-xs" href="#">
-                                    View Profile <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 transition-colors duration-150 group">
-<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">STU-1003</td>
-<td class="px-lg py-md whitespace-nowrap">
-<div class="flex items-center gap-sm">
-<div class="h-8 w-8 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary font-bold text-xs">AP</div>
-<span class="font-label-md text-label-md text-on-surface">Amit Patel</span>
-</div>
-</td>
-<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">3</td>
-<td class="px-lg py-md text-right whitespace-nowrap">
-<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-xs" href="#">
-                                    View Profile <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 transition-colors duration-150 group">
-<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">STU-1004</td>
-<td class="px-lg py-md whitespace-nowrap">
-<div class="flex items-center gap-sm">
-<div class="h-8 w-8 rounded-full bg-error-container/50 flex items-center justify-center text-error font-bold text-xs">SR</div>
-<span class="font-label-md text-label-md text-on-surface">Sneha Reddy</span>
-</div>
-</td>
-<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">4</td>
-<td class="px-lg py-md text-right whitespace-nowrap">
-<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-xs" href="#">
-                                    View Profile <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 transition-colors duration-150 group">
-<td class="px-lg py-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">STU-1005</td>
-<td class="px-lg py-md whitespace-nowrap">
-<div class="flex items-center gap-sm">
-<div class="h-8 w-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary font-bold text-xs">VR</div>
-<span class="font-label-md text-label-md text-on-surface">Vikram Rao</span>
-</div>
-</td>
-<td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">5</td>
-<td class="px-lg py-md text-right whitespace-nowrap">
-<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-xs" href="#">
-                                    View Profile <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</td>
-</tr>
+} @empty {
+  <tr><td colspan="4" class="px-lg py-md text-center text-text-secondary-color">No students found</td></tr>
+}
 </tbody>
 </table>
 </div>
 <div class="px-lg py-md border-t border-border-soft bg-surface-bright flex justify-between items-center text-sm text-text-secondary-color">
-<span>Showing 1 to 5 of 42 students</span>
+<span>Showing {{ students.length > 0 ? 1 : 0 }} to {{ students.length }} of {{ students.length }} students</span>
 <div class="flex gap-xs">
 <button class="px-3 py-1 border border-border-soft rounded-md hover:bg-slate-100 transition-colors disabled:opacity-50" disabled="">Previous</button>
 <button class="px-3 py-1 border border-border-soft rounded-md hover:bg-slate-100 transition-colors">Next</button>

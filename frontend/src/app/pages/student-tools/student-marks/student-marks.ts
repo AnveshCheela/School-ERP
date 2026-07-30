@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { StudentService } from '../../../core/services/student.service';
 
 interface ClassRanking {
   student_id: string;
@@ -17,8 +18,12 @@ interface ClassRanking {
   templateUrl: './student-marks.html',
 })
 export class StudentMarksComponent implements OnInit {
+  private studentService = inject(StudentService);
+
+  rankings: ClassRanking[] = [];
+  
   // Mock data for immediate testing since JWT auth isn't hooked up yet
-  rankings: ClassRanking[] = [
+  mockRankings: ClassRanking[] = [
     { student_id: 'S001', student_name: 'Alice Johnson', average: 95.5, total_subjects: 5, rank: 1 },
     { student_id: 'S002', student_name: 'Bob Smith', average: 92.0, total_subjects: 5, rank: 2 },
     { student_id: 'S003', student_name: 'Kiran Sai', average: 88.5, total_subjects: 5, rank: 3 },
@@ -33,7 +38,21 @@ export class StudentMarksComponent implements OnInit {
   selectedExam = 'SA-I';
 
   ngOnInit(): void {
-    this.myRanking = this.rankings.find(r => r.student_id === this.myStudentId);
+    this.studentService.getClassRankings(1).subscribe({
+      next: (data) => {
+        if (data && data.rankings) {
+          this.rankings = data.rankings;
+        } else {
+          this.rankings = this.mockRankings;
+        }
+        this.myRanking = this.rankings.find(r => r.student_id === this.myStudentId);
+      },
+      error: (err) => {
+        console.error('Error fetching rankings', err);
+        this.rankings = this.mockRankings;
+        this.myRanking = this.rankings.find(r => r.student_id === this.myStudentId);
+      }
+    });
   }
 
   selectExam(exam: string) {

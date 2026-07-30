@@ -80,7 +80,7 @@
 </div>
 </div>
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-tertiary">92%</span>
+<span class="font-display-lg text-display-lg text-tertiary">{{ attendanceData?.percentage || 92 }}%</span>
 <span class="font-label-sm text-label-sm text-tertiary flex items-center"><span class="material-symbols-outlined text-[16px]">trending_up</span> +2%</span>
 </div>
 </div>
@@ -93,7 +93,7 @@
 </div>
 </div>
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-[#2563EB]">88%</span>
+<span class="font-display-lg text-display-lg text-[#2563EB]">{{ rankingData?.average || 88 }}%</span>
 </div>
 </div>
 <!-- Card 3 -->
@@ -110,36 +110,19 @@
 </button>
 </div>
 <div class="space-y-6">
-<!-- Subject 1 -->
+@for (subject of rankingData?.subjects; track subject.name) {
 <div class="group">
 <div class="flex justify-between items-center mb-2">
-<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">calculate</span>Mathematics</div></span>
-<span class="font-label-md text-label-md text-on-surface">90/100</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu_book</span>{{ subject.name }}</div></span>
+<span class="font-label-md text-label-md text-on-surface">{{ subject.score }}/100</span>
 </div>
 <div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
-<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[90%]"></div>
+<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out" [style.width.%]="subject.score"></div>
 </div>
 </div>
-<!-- Subject 2 -->
-<div class="group">
-<div class="flex justify-between items-center mb-2">
-<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">science</span>Science</div></span>
-<span class="font-label-md text-label-md text-on-surface">85/100</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
-<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[85%]"></div>
-</div>
-</div>
-<!-- Subject 3 -->
-<div class="group">
-<div class="flex justify-between items-center mb-2">
-<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu_book</span>English</div></span>
-<span class="font-label-md text-label-md text-on-surface">88/100</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
-<div class="bg-primary h-2.5 rounded-full transition-all duration-1000 ease-out w-[88%]"></div>
-</div>
-</div>
+} @empty {
+  <div class="text-on-surface-variant text-sm">No exam results available.</div>
+}
 </div>
 </div>
 </div>
@@ -151,7 +134,7 @@
 <div class="flex-1 flex items-center justify-center mb-6">
 <div class="relative w-40 h-40 rounded-full flex items-center justify-center bg-surface-container-highest" style="background: conic-gradient(#005522 0% 90%, #f2f3ff 90% 100%);">
 <div class="absolute inset-4 bg-surface rounded-full flex items-center justify-center flex-col shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)]">
-<span class="font-headline-md text-headline-md text-on-surface">90%</span>
+<span class="font-headline-md text-headline-md text-on-surface">{{ attendanceData?.percentage || 90 }}%</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Present</span>
 </div>
 </div>
@@ -162,14 +145,14 @@
 <div class="w-2 h-2 rounded-full bg-tertiary"></div>
 <span class="font-body-md text-body-md text-on-surface">Present</span>
 </div>
-<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">18 days <span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span></span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">{{ attendanceData?.present_days || 18 }} days <span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span></span>
 </div>
 <div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant/50">
 <div class="flex items-center gap-3">
 <div class="w-2 h-2 rounded-full bg-error"></div>
 <span class="font-body-md text-body-md text-on-surface">Absent</span>
 </div>
-<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">2 days <span class="material-symbols-outlined text-error text-[18px]">cancel</span></span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">{{ attendanceData?.absent_days || 2 }} days <span class="material-symbols-outlined text-error text-[18px]">cancel</span></span>
 </div>
 </div>
 </div>
