@@ -1,0 +1,106 @@
+<div class="min-h-screen bg-surface flex flex-col md:flex-row font-sans text-on-surface">
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-margin-mobile md:px-gutter py-xl">
+        <!-- Back Navigation & Title -->
+        <div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+            <div>
+                <a routerLink="/dashboard/student" class="inline-flex items-center text-primary hover:text-primary-container font-label-md text-label-md transition-colors mb-sm">
+                    <span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>
+                    Back to Dashboard
+                </a>
+                <h1 class="text-page-title text-text-primary-color mb-xs tracking-tight">My Attendance History</h1>
+                <p class="font-body-md text-body-md text-text-secondary-color">Track your present and absent days for the academic year.</p>
+            </div>
+            
+            <button class="bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md px-md py-sm rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-xs shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                Download Report
+            </button>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+            <!-- Present -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Total Present</span>
+                <div class="flex items-end gap-sm">
+                    <span class="text-4xl font-bold text-stat-green leading-none">{{presentDays}}</span>
+                    <span class="material-symbols-outlined text-stat-green/50 mb-1" data-icon="check_circle">check_circle</span>
+                </div>
+            </div>
+            
+            <!-- Absent -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Total Absent</span>
+                <div class="flex items-end gap-sm">
+                    <span class="text-4xl font-bold text-error leading-none">{{absentDays}}</span>
+                    <span class="material-symbols-outlined text-error/50 mb-1" data-icon="cancel">cancel</span>
+                </div>
+            </div>
+            
+            <!-- Percentage -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Attendance Rate</span>
+                <div class="flex items-end gap-sm">
+                    <span class="text-4xl font-bold leading-none" 
+                          [ngClass]="{'text-stat-green': attendancePercentage >= 80, 'text-error': attendancePercentage < 80}">
+                        {{attendancePercentage}}%
+                    </span>
+                    <span class="material-symbols-outlined mb-1" 
+                          [ngClass]="{'text-stat-green/50': attendancePercentage >= 80, 'text-error/50': attendancePercentage < 80}" 
+                          data-icon="monitoring">monitoring</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attendance Records Table -->
+        <div class="bg-surface rounded-2xl border border-border-soft shadow-soft overflow-hidden">
+            <div class="p-lg border-b border-border-soft bg-surface-container-lowest flex justify-between items-center">
+                <h2 class="font-headline-sm text-headline-sm text-on-surface">Detailed Records</h2>
+                <div class="text-label-sm text-on-surface-variant font-label-sm">
+                    Showing {{records.length}} records
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-table-header-bg border-b border-border-soft">
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold">Date</th>
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold">Status</th>
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold">Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border-soft">
+                        <tr *ngFor="let record of records" class="hover:bg-slate-50 transition-colors duration-150 group">
+                            <td class="px-lg py-md font-body-sm text-body-sm text-on-surface font-medium whitespace-nowrap">
+                                {{ record.date | date:'mediumDate' }}
+                            </td>
+                            <td class="px-lg py-md whitespace-nowrap">
+                                <span class="inline-flex items-center gap-xs px-2.5 py-1 rounded-full text-xs font-semibold"
+                                      [ngClass]="{'bg-stat-green/10 text-stat-green': record.status === 'Present', 'bg-error/10 text-error': record.status === 'Absent'}">
+                                    <span class="w-1.5 h-1.5 rounded-full" 
+                                          [ngClass]="{'bg-stat-green': record.status === 'Present', 'bg-error': record.status === 'Absent'}"></span>
+                                    {{ record.status }}
+                                </span>
+                            </td>
+                            <td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">
+                                {{ record.remarks || '--' }}
+                            </td>
+                        </tr>
+                        
+                        <!-- Empty State (just in case) -->
+                        <tr *ngIf="records.length === 0">
+                            <td colspan="3" class="px-lg py-xl text-center">
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="material-symbols-outlined text-4xl text-outline-variant mb-sm" data-icon="event_busy">event_busy</span>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">No Records Found</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Your attendance has not been recorded yet.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>

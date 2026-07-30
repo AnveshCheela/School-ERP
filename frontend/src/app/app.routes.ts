@@ -9,6 +9,7 @@ import { StudentAttendance } from './pages/teacher-tools/student-attendance/stud
 import { StudentsMarksheet } from './pages/teacher-tools/students-marksheet/students-marksheet';
 import { SuperadminDashboard } from './pages/dashboards/superadmin-dashboard/superadmin-dashboard';
 import { AccountantDashboard } from './pages/dashboards/accountant-dashboard/accountant-dashboard';
+import { AttendanceHistoryComponent } from './pages/student-tools/attendance-history/attendance-history';
 
 export const routes: Routes = [
   { path: '', component: LandingPage },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'dashboard/teacher', component: TeacherDashboard },
   { path: 'dashboard/superadmin', component: SuperadminDashboard },
   { path: 'dashboard/accountant', component: AccountantDashboard },
+  { path: 'student-tools/attendance', component: AttendanceHistoryComponent },
   { path: 'tools/attendance', component: StudentAttendance },
   { path: 'tools/marksheet', component: StudentsMarksheet },
   { path: '**', redirectTo: '' }
