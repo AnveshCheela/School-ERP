@@ -33,6 +33,16 @@ export class AttendanceHistoryComponent implements OnInit {
   presentDays = 0;
   absentDays = 0;
   attendancePercentage = 0;
+  currentFilter: 'All' | 'Present' | 'Absent' = 'All';
+
+  get filteredRecords(): AttendanceRecord[] {
+    if (this.currentFilter === 'All') return this.records;
+    return this.records.filter(r => r.status === this.currentFilter);
+  }
+
+  setFilter(filter: 'All' | 'Present' | 'Absent') {
+    this.currentFilter = filter;
+  }
 
   ngOnInit(): void {
     this.totalDays = this.records.length;

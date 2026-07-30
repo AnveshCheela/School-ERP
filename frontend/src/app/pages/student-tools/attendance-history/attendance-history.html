@@ -55,10 +55,24 @@
 
         <!-- Attendance Records Table -->
         <div class="bg-surface rounded-2xl border border-border-soft shadow-soft overflow-hidden">
-            <div class="p-lg border-b border-border-soft bg-surface-container-lowest flex justify-between items-center">
+            <div class="p-lg border-b border-border-soft bg-surface-container-lowest flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
                 <h2 class="font-headline-sm text-headline-sm text-on-surface">Detailed Records</h2>
-                <div class="text-label-sm text-on-surface-variant font-label-sm">
-                    Showing {{records.length}} records
+                <div class="flex items-center gap-2 bg-surface-container rounded-lg p-1 border border-outline-variant">
+                    <button (click)="setFilter('All')" 
+                            class="px-4 py-1.5 rounded-md font-label-sm text-label-sm transition-colors"
+                            [ngClass]="currentFilter === 'All' ? 'bg-surface text-on-surface shadow-sm' : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'">
+                        All
+                    </button>
+                    <button (click)="setFilter('Present')" 
+                            class="px-4 py-1.5 rounded-md font-label-sm text-label-sm transition-colors"
+                            [ngClass]="currentFilter === 'Present' ? 'bg-surface text-on-surface shadow-sm' : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'">
+                        Present
+                    </button>
+                    <button (click)="setFilter('Absent')" 
+                            class="px-4 py-1.5 rounded-md font-label-sm text-label-sm transition-colors"
+                            [ngClass]="currentFilter === 'Absent' ? 'bg-surface text-on-surface shadow-sm' : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'">
+                        Absent
+                    </button>
                 </div>
             </div>
             <div class="overflow-x-auto">
@@ -71,7 +85,7 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-border-soft">
-                        <tr *ngFor="let record of records" class="hover:bg-slate-50 transition-colors duration-150 group">
+                        <tr *ngFor="let record of filteredRecords" class="hover:bg-slate-50 transition-colors duration-150 group">
                             <td class="px-lg py-md font-body-sm text-body-sm text-on-surface font-medium whitespace-nowrap">
                                 {{ record.date | date:'mediumDate' }}
                             </td>
@@ -89,12 +103,12 @@
                         </tr>
                         
                         <!-- Empty State (just in case) -->
-                        <tr *ngIf="records.length === 0">
+                        <tr *ngIf="filteredRecords.length === 0">
                             <td colspan="3" class="px-lg py-xl text-center">
                                 <div class="flex flex-col items-center justify-center">
                                     <span class="material-symbols-outlined text-4xl text-outline-variant mb-sm" data-icon="event_busy">event_busy</span>
                                     <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">No Records Found</h3>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Your attendance has not been recorded yet.</p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">There are no {{currentFilter !== 'All' ? currentFilter.toLowerCase() : ''}} attendance records.</p>
                                 </div>
                             </td>
                         </tr>
