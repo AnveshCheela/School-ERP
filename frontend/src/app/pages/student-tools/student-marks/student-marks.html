@@ -1,0 +1,111 @@
+<div class="min-h-screen bg-surface flex flex-col md:flex-row font-sans text-on-surface">
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-margin-mobile md:px-gutter py-xl">
+        <!-- Back Navigation & Title -->
+        <div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+            <div>
+                <a routerLink="/dashboard/student" class="inline-flex items-center text-primary hover:text-primary-container font-label-md text-label-md transition-colors mb-sm">
+                    <span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>
+                    Back to Dashboard
+                </a>
+                <h1 class="text-page-title text-text-primary-color mb-xs tracking-tight">Class Rankings</h1>
+                <p class="font-body-md text-body-md text-text-secondary-color">View your marks and where you rank among classmates.</p>
+            </div>
+            
+            <!-- Exam Selector -->
+            <div class="flex flex-wrap items-center gap-sm bg-surface-container rounded-lg p-1 border border-outline-variant">
+                <button *ngFor="let exam of exams" 
+                        (click)="selectExam(exam)"
+                        class="px-4 py-1.5 rounded-md font-label-sm text-label-sm transition-colors"
+                        [ngClass]="selectedExam === exam ? 'bg-surface text-on-surface shadow-sm' : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'">
+                    {{ exam }}
+                </button>
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+            <!-- Rank -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-5">
+                    <span class="material-symbols-outlined text-[100px]" data-icon="trophy">trophy</span>
+                </div>
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs relative z-10">Your Current Rank</span>
+                <div class="flex items-end gap-sm relative z-10">
+                    <span class="text-4xl font-bold text-primary leading-none">#{{myRanking?.rank}}</span>
+                </div>
+            </div>
+            
+            <!-- Average -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Your Average Score</span>
+                <div class="flex items-end gap-sm">
+                    <span class="text-4xl font-bold text-stat-green leading-none">{{myRanking?.average}}%</span>
+                    <span class="material-symbols-outlined text-stat-green/50 mb-1" data-icon="grade">grade</span>
+                </div>
+            </div>
+            
+            <!-- Total Students -->
+            <div class="bg-surface rounded-xl border border-border-soft p-lg shadow-soft hover:shadow-hover transition-shadow duration-200 flex flex-col justify-center">
+                <span class="font-label-md text-label-md text-text-secondary-color mb-sm uppercase tracking-wide text-xs">Total Students</span>
+                <div class="flex items-end gap-sm">
+                    <span class="text-4xl font-bold text-on-surface leading-none">{{rankings.length}}</span>
+                    <span class="material-symbols-outlined text-on-surface-variant mb-1" data-icon="groups">groups</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rankings Table -->
+        <div class="bg-surface rounded-2xl border border-border-soft shadow-soft overflow-hidden">
+            <div class="p-lg border-b border-border-soft bg-surface-container-lowest flex justify-between items-center">
+                <h2 class="font-headline-sm text-headline-sm text-on-surface">Live Class Ranking - {{selectedExam}}</h2>
+                <div class="flex items-center gap-xs">
+                    <span class="w-2 h-2 rounded-full bg-stat-green animate-pulse"></span>
+                    <span class="text-label-sm text-stat-green font-label-sm font-semibold tracking-wide uppercase text-xs">Live via gRPC</span>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-table-header-bg border-b border-border-soft">
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold w-24">Rank</th>
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold">Student Name</th>
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold">Student ID</th>
+                            <th class="px-lg py-md font-label-sm text-label-sm text-text-secondary-color uppercase tracking-wider font-semibold text-right">Average Score</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border-soft">
+                        <tr *ngFor="let record of rankings" 
+                            class="transition-colors duration-150 group"
+                            [ngClass]="record.student_id === myStudentId ? 'bg-primary/5 hover:bg-primary/10 border-l-4 border-l-primary' : 'hover:bg-slate-50 border-l-4 border-l-transparent'">
+                            
+                            <td class="px-lg py-md whitespace-nowrap">
+                                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm"
+                                      [ngClass]="{
+                                        'bg-[#FFD700]/20 text-[#B8860B]': record.rank === 1,
+                                        'bg-[#C0C0C0]/20 text-[#808080]': record.rank === 2,
+                                        'bg-[#CD7F32]/20 text-[#8B4513]': record.rank === 3,
+                                        'bg-surface-container text-on-surface-variant': record.rank > 3 && record.student_id !== myStudentId,
+                                        'bg-primary text-on-primary': record.rank > 3 && record.student_id === myStudentId
+                                      }">
+                                    {{ record.rank }}
+                                </span>
+                            </td>
+                            <td class="px-lg py-md font-body-sm text-body-sm font-medium whitespace-nowrap"
+                                [ngClass]="record.student_id === myStudentId ? 'text-primary font-bold' : 'text-on-surface'">
+                                {{ record.student_name }} <span *ngIf="record.student_id === myStudentId" class="text-xs text-primary ml-1">(You)</span>
+                            </td>
+                            <td class="px-lg py-md font-body-sm text-body-sm text-text-secondary-color whitespace-nowrap">
+                                {{ record.student_id }}
+                            </td>
+                            <td class="px-lg py-md font-body-sm text-body-sm font-bold whitespace-nowrap text-right"
+                                [ngClass]="record.student_id === myStudentId ? 'text-primary' : 'text-on-surface'">
+                                {{ record.average | number:'1.1-2' }}%
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
