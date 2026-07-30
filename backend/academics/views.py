@@ -59,6 +59,8 @@ class TeacherMarksView(APIView):
             data = MarksSerializer(marks).data
             if grpc_error:
                 data['grpc_warning'] = "Marks saved locally, but gRPC submission failed."
+            else:
+                data['updated_average'] = grpc_response.average
                 
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

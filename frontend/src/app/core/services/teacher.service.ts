@@ -29,4 +29,12 @@ export class TeacherService {
       present: present
     });
   }
+
+  submitMark(studentId: number, subject: string, score: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/teacher/marks/`, {
+      student: studentId,
+      subject: subject,
+      score: score
+    });
+  }
 }
