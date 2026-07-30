@@ -5,8 +5,8 @@
 <span class="font-headline-md text-headline-md font-bold text-primary">Vagdevi Vidyalayam</span>
 </div>
 <div class="flex space-x-lg">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"  routerLink="/tools/attendance">Dashboard</a>
-<a class="font-label-md text-label-md text-primary border-b-2 border-primary font-bold pb-1 opacity-90 scale-[0.98] transition-transform"  routerLink="/tools/marksheet">Academics</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary font-bold pb-1 opacity-90 scale-[0.98] transition-transform" routerLink="/dashboard/teacher">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" routerLink="/tools/marksheet">Academics</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"  routerLink="/tools/attendance">Attendance</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"  routerLink="/tools/attendance">Fees</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Reports</a>
@@ -26,9 +26,21 @@
 <!-- Main Content Canvas -->
 <main class="flex-grow w-full max-w-6xl mx-auto px-margin-mobile md:px-gutter py-xl">
 <!-- Header -->
-<div class="mb-xl">
+<div class="mb-xl flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
 <h1 class="text-page-title text-text-primary-color mb-xs tracking-tight">My Class Roster</h1>
 <p class="font-body-md text-body-md text-text-secondary-color">Class 10-A | Academic Year 2026-2027</p>
+</div>
+<div class="flex gap-md">
+<a routerLink="/tools/attendance" class="bg-surface-container border border-outline-variant text-on-surface rounded-lg px-md py-sm font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+Attendance
+</a>
+<a routerLink="/tools/marksheet" class="bg-primary text-on-primary rounded-lg px-md py-sm font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+Submit Marks
+</a>
+</div>
 </div>
 <!-- Stats Row -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
